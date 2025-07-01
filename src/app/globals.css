@@ -2,39 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Ensure full height layout */
-html, body {
+/* Reset and layout consistency */
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
+  font-family: system-ui, sans-serif;
+  background-color: #fff;
+  color: #1f2937; /* Tailwind’s gray-800 */
 }
 
-/* Slow pulse animation */
-@keyframes pulse-slow {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 0.9;
-  }
-}
-.animate-pulse-slow {
-  animation: pulse-slow 3s ease-in-out infinite;
-}
-
-/* Orb-specific pulse animation */
-@keyframes orb-pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.06);
-    opacity: 0.9;
-  }
-}
-.animate-orb-pulse {
-  animation: orb-pulse 4s ease-in-out infinite;
+/* Optional: smooth transitions across the app */
+* {
+  transition: background-color 0.2s ease
 }

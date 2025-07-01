@@ -1,7 +1,7 @@
-const Orb: React.FC = () => {
-  return (
-    <div className="w-32 h-32 bg-purple-400 rounded-full shadow-md animate-orb-pulse" />
-  );
-};
+"use client";
 
-export default Orb;
+export default function Orb() {
+  return (
+    <div className="w-40 h-40 bg-indigo-500 rounded-full shadow-md" />
+  );
+}
