@@ -1,0 +1,9 @@
+/* src/app/intro.css */
+
+.logo-title {
+  font-size: clamp(1.4rem, 2.5vw + 0.5rem, 2.6rem);
+}
+
+.tagline {
+  font-size: clamp(1.6rem, 3.5vw + 1rem, 2.75rem);
+}

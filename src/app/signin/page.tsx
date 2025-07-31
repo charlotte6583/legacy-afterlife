@@ -1,78 +1,61 @@
-"use client";
-import { useState } from "react";
+'use client';
+
+import { useState } from 'react';
+import './signin.css'; // lowercase import to match your setup
 
 function SignIn() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   return (
-    <div
-      className="min-h-screen flex flex-col items-center justify-center px-4"
-      style={{ backgroundColor: "#CCAE88" }}
-    >
-      {/* App title */}
-      <h1 className="text-white text-3xl font-bold tracking-wide mb-6">
-        Legacy Afterlife
-      </h1>
+    <div className="signin-page">
+      {/* 🌸 Header */}
+      <div className="signin-header">
+        <h1>Legacy Afterlife</h1>
+        <p>Your memories live here — secure, private, and always yours.</p>
+      </div>
 
-      {/* Sign In panel */}
-      <div className="bg-white/90 p-6 rounded-md shadow w-full max-w-sm">
-        <h2 className="text-base font-semibold text-center mb-4 text-gray-900">
-          Sign In
-        </h2>
+      {/* 📦 Card Wrapper to control spacing */}
+      <div className="signin-card-wrapper">
+        <div className="signin-card">
+          <h2>Step into your story</h2>
 
-        <form className="space-y-3">
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-[11px] font-medium text-gray-700"
-            >
-              Email Address
-            </label>
-            <input
-              type="email"
-              id="email"
-              className="mt-1 w-full px-3 py-2 border rounded-md text-xs focus:outline-none focus:ring-2 focus:ring-emerald-400"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
+          <form className="signin-form">
+            <div className="field-block">
+              <label htmlFor="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="you@remembered.com"
+                required
+              />
+            </div>
 
-          <div>
-            <label
-              htmlFor="password"
-              className="block text-[11px] font-medium text-gray-700"
-            >
-              Password
-            </label>
-            <input
-              type="password"
-              id="password"
-              className="mt-1 w-full px-3 py-2 border rounded-md text-xs focus:outline-none focus:ring-2 focus:ring-emerald-400"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
+            <div className="field-block">
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="••••••••"
+                required
+              />
+            </div>
 
-          <button
-            type="submit"
-            className="w-full bg-emerald-500 text-white py-2 text-xs rounded-md hover:bg-emerald-600 transition"
-          >
-            Sign In
-          </button>
-        </form>
+            <button type="submit">Enter MemorySpace</button>
+          </form>
 
-        <p className="mt-3 text-[11px] text-center text-gray-700">
-          Don’t have an account?{" "}
-          <a
-            href="/register"
-            className="text-emerald-600 font-medium hover:underline"
-          >
-            Create one
-          </a>
-        </p>
+          <p className="signup-text">
+            Don’t have an account? <a href="/register">Create one</a>
+          </p>
+
+          <p className="quote">
+            “Memories are the threads that hold us together.”
+          </p>
+        </div>
       </div>
     </div>
   );

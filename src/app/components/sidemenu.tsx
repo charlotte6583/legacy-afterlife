@@ -1,16 +1,15 @@
-// src/app/components/sidemenu.tsx
-import React from "react";
+'use client';
 
-const SideMenu: React.FC = () => {
+import Link from 'next/link';
+
+export default function SideMenu() {
   return (
-    <div className="p-5 pt-10 space-y-6">
+    <aside className="p-5 pt-10 space-y-6">
       <nav className="flex flex-col space-y-4 text-base font-medium">
-        <a href="/family" className="hover:text-indigo-600">👪 Family</a>
-        <a href="/archive" className="hover:text-indigo-600">📦 Archive</a>
-        <a href="/settings" className="hover:text-indigo-600">⚙️ Settings</a>
+        <Link href="/family" className="hover:text-indigo-600">👪 Family</Link>
+        <Link href="/archive" className="hover:text-indigo-600">📦 Archive</Link>
+        <Link href="/settings" className="hover:text-indigo-600">⚙️ Settings</Link>
       </nav>
-    </div>
+    </aside>
   );
-};
-
-export default SideMenu;
+}

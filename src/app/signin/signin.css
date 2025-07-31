@@ -1,0 +1,124 @@
+/* 🌅 Page background and font */
+.signin-page {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #CCAE88, #FAF3EB);
+  font-family: system-ui, sans-serif;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* 🪷 Header block */
+.signin-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.signin-header h1 {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.signin-header p {
+  color: white;
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+/* 📦 Card wrapper for vertical spacing and centering */
+.signin-card-wrapper {
+  margin-top: 6rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* ✨ Sign-in card */
+.signin-card {
+  width: 100%;
+  max-width: 360px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+/* 🧩 Section heading */
+.signin-card h2 {
+  font-size: 1.125rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* 📝 Form container */
+.signin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* 🏷️ Label styling */
+.field-block label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  display: block;
+  color: #555;
+}
+
+/* 🔒 Input fields */
+.field-block input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+  box-sizing: border-box;
+}
+
+/* 🎯 Submit button */
+button[type="submit"] {
+  background-color: #ec4899;
+  color: white;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #db2777;
+}
+
+/* 🔗 Sign-up hint */
+.signup-text {
+  font-size: 0.75rem;
+  text-align: center;
+  margin-top: 1rem;
+  color: #555;
+}
+
+.signup-text a {
+  color: #ec4899;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
+
+/* ✒️ Memory quote */
+.quote {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.6875rem;
+  font-style: italic;
+  color: #666;
+}

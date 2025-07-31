@@ -1,0 +1,142 @@
+.wrapper {
+  position: relative;
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: #fefefe;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.navbar {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.navbar button {
+  background: none;
+  border: none;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #444;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.active {
+  color: #222;
+  border-bottom: 2px solid #222;
+}
+
+.content {
+  position: relative;
+  margin-top: 2rem;
+}
+
+.floatingButtons {
+  position: relative;
+  height: 80vh;
+}
+
+.memoryBtn {
+  position: absolute;
+  padding: 0.7rem 1.2rem;
+  font-size: 0.9rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Motion styles — adjust creatively as desired */
+.memoryBtnFloatUpLeft {
+  animation-name: floatUpLeft;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+.memoryBtnFloatRightDiagonal {
+  animation-name: floatRightDiagonal;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+}
+
+.memoryBtnFloatCurve {
+  animation-name: floatCurve;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes floatUpLeft {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-10px, -20px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes floatRightDiagonal {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(12px, -12px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes floatCurve {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(10px, -5px); }
+  75% { transform: translate(-10px, 10px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* 🧭 Search bar styles */
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.searchBar input {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.searchBar input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(100, 100, 255, 0.2);
+}
+
+.searchBar button {
+  padding: 0.6rem 1rem;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.searchBar button:hover {
+  background-color: #222;
+}
+
+.layoutPlaceholder {
+  text-align: center;
+  font-style: italic;
+  color: #999;
+  margin-top: 2rem;
+}
