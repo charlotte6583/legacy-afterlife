@@ -1,27 +1,28 @@
-"use client";
+'use client';
 
+import React from 'react';
 import Image from "next/image";
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col flex-grow pt-20">
-      {/* 🌕 Orb Image */}
-      <div className="flex justify-center mt-6">
+    <div className="page-background">
+      {/* 🌕 Orb Centerpiece */}
+      <div className="orb-container">
         <Image
           src="/orb.png"
-          alt="Temporary Orb"
+          alt="Orb"
           width={128}
           height={128}
-          className="rounded-full shadow-lg object-cover"
+          className="orb-image"
         />
       </div>
 
       {/* 💬 Welcome Message */}
-      <div className="mt-6 px-8 text-center">
-        <p className="text-base font-medium leading-relaxed">
+      <div className="welcome-message">
+        <p>
           Hello. I&apos;m here to help you leave something behind—something that matters.
         </p>
       </div>
-    </div>
+    </div> // ✅ Closed the outermost div
   );
 }

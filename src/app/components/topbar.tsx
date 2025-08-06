@@ -1,10 +1,17 @@
 export default function TopBar({ userName }: { userName: string }) {
   return (
-    <div className="w-full px-6 py-4 bg-white border-b border-gray-300 shadow-sm flex items-center">
-      <button aria-label="Menu" className="text-2xl text-gray-700 mr-4">
+    <div
+      className="topbar w-full px-6 py-4 flex items-center"
+      style={{
+        backgroundColor: '#CCAE88',
+        boxShadow: 'none',
+        borderBottom: 'none',
+      }}
+    >
+      <button aria-label="Menu" className="text-2xl text-white mr-4">
         &#9776;
       </button>
-      <h1 className="text-base font-semibold tracking-wide text-[#2d2d2d]">
+      <h1 className="text-base font-semibold tracking-wide text-white">
         {userName}&rsquo;s Legacy
       </h1>
     </div>
