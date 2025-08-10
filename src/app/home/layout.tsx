@@ -1,6 +1,6 @@
 'use client';
 
-import '../../styles/styles.css';
+import '../../styles/styles.css'; // Optional: only if you have extra styles beyond Tailwind
 import BottomNav from '../components/bottomnav';
 
 export default function HomeLayout({ children }: { children: React.ReactNode }) {

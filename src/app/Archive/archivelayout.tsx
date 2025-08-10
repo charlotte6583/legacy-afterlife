@@ -20,26 +20,54 @@ const motionClasses = [
   styles.memoryBtnFloatCurve,
 ];
 
+type MemoryStyle = {
+  top: string;
+  left: string;
+  animationDelay: string;
+  motionClass: string;
+};
+
 const ArchiveLayout: React.FC = () => {
   const [mode, setMode] = useState<LayoutMode>('albums');
   const [visibleMemories, setVisibleMemories] = useState<string[]>([]);
+  const [memoryStyles, setMemoryStyles] = useState<Record<string, MemoryStyle>>({});
   const [searchQuery, setSearchQuery] = useState('');
+  const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!hasMounted || mode !== 'albums') return;
+
     const updateVisible = () => {
-      const shuffled = allMemories.sort(() => 0.5 - Math.random());
-      setVisibleMemories(shuffled.slice(0, 10));
+      const shuffled = [...allMemories].sort(() => 0.5 - Math.random());
+      const selected = shuffled.slice(0, 10);
+
+      const stylesMap: Record<string, MemoryStyle> = {};
+      selected.forEach((label) => {
+        stylesMap[label] = {
+          top: `${Math.floor(Math.random() * 70 + 15)}%`,
+          left: `${Math.floor(Math.random() * 70 + 15)}%`,
+          animationDelay: `${(Math.random() * 2).toFixed(2)}s`,
+          motionClass: motionClasses[Math.floor(Math.random() * motionClasses.length)],
+        };
+      });
+
+      setVisibleMemories(selected);
+      setMemoryStyles(stylesMap);
     };
 
-    updateVisible(); // initial
-    const interval = setInterval(updateVisible, 30000); // refresh every 30s
+    updateVisible(); // initial load
+    const interval = setInterval(updateVisible, 30000);
     return () => clearInterval(interval);
-  }, []);
+  }, [hasMounted, mode]);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Search:', searchQuery);
-    // You can integrate actual filtering logic here later
+    // Add search filtering logic here when ready
   };
 
   return (
@@ -55,6 +83,7 @@ const ArchiveLayout: React.FC = () => {
         <button type="submit">Search</button>
       </form>
 
+      {/* 🧭 Mode Switcher */}
       <nav className={styles.navbar}>
         {layoutModes.map((layout) => (
           <button
@@ -67,20 +96,22 @@ const ArchiveLayout: React.FC = () => {
         ))}
       </nav>
 
+      {/* 📦 Content Area */}
       <section className={styles.content}>
-        {mode === 'albums' && (
+        {hasMounted && mode === 'albums' ? (
           <div className={styles.floatingButtons}>
-            {visibleMemories.map((label, i) => {
-              const motionStyle =
-                motionClasses[Math.floor(Math.random() * motionClasses.length)];
+            {visibleMemories.map((label) => {
+              const style = memoryStyles[label];
+              if (!style) return null;
+
               return (
                 <button
                   key={label}
-                  className={`${styles.memoryBtn} ${motionStyle}`}
+                  className={`${styles.memoryBtn} ${style.motionClass}`}
                   style={{
-                    top: `${Math.random() * 80 + 10}%`,
-                    left: `${Math.random() * 80 + 10}%`,
-                    animationDelay: `${Math.random() * 3}s`,
+                    top: style.top,
+                    left: style.left,
+                    animationDelay: style.animationDelay,
                   }}
                 >
                   {label}
@@ -88,11 +119,12 @@ const ArchiveLayout: React.FC = () => {
               );
             })}
           </div>
-        )}
+        ) : null}
 
         {mode === 'timeline' && (
           <div className={styles.layoutPlaceholder}>Timeline View</div>
         )}
+
         {mode === 'calendar' && (
           <div className={styles.layoutPlaceholder}>Calendar View</div>
         )}

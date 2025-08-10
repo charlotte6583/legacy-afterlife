@@ -1,7 +1,8 @@
 'use client';
 
-import React from 'react';
-import ArchiveLayout from './archivelayout';
+import dynamic from 'next/dynamic';
+
+const ArchiveLayout = dynamic(() => import('./archivelayout'), { ssr: false });
 
 export default function Page() {
   return <ArchiveLayout />;

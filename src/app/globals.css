@@ -1,5 +1,4 @@
-@tailwind base;
-@tailwind components;
+@import "tailwindcss/preflight";
 @tailwind utilities;
 
 /* 🔁 Reset and layout consistency */
@@ -34,7 +33,7 @@ body {
 .topbar h1,
 .topbar button {
   color: #ffffff;
-  text-shadow: none; /* ✅ Removes unwanted shadow */
+  text-shadow: none;
 }
 
 /* 🌿 Smooth transitions for interactive elements */

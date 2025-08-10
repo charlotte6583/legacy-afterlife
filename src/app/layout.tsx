@@ -15,7 +15,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full">
-      <ClientLayout>{children}</ClientLayout>
+      <head>
+        {/* 🔗 Link to compiled Tailwind + custom styles */}
+        <link rel="stylesheet" href="/output.css" />
+      </head>
+      <body className="h-full">
+        <ClientLayout>{children}</ClientLayout>
+      </body>
     </html>
   );
 }
