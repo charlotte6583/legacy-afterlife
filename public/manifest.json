@@ -1,11 +1,11 @@
 {
-  "name": "Legacy Afterlife",
+  "name": "Charlotte's Legacy",
   "short_name": "Legacy",
   "start_url": "/",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#ffffff",
-  "theme_color": "#000000",
-  "description": "Every step of your life, beautifully preserved.",
+  "theme_color": "#ff9966",
   "icons": [
     {
       "src": "/icon-192.png",
@@ -15,6 +15,25 @@
     {
       "src": "/icon-512.png",
       "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/welcomepage.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/placeholder.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/familyplaceholder.png",
+      "sizes": "1280x720",
       "type": "image/png"
     }
   ]

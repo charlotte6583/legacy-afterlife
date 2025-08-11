@@ -2,15 +2,20 @@
 import withPWA from 'next-pwa';
 import type { NextConfig } from 'next';
 
-const baseConfig: NextConfig = {
+const nextConfig: NextConfig = {
   experimental: {
-    useLightningcss: false, // Disable LightningCSS to prevent native module errors
+    useLightningcss: false
   },
   reactStrictMode: true,
+  // ✅ PWA config goes inside the wrapper, not here
 };
 
 export default withPWA({
-  dest: 'public',
-  register: true,
-  skipWaiting: true,
-})(baseConfig);
+  ...nextConfig,
+  pwa: {
+    dest: 'public',
+    register: true,
+    skipWaiting: true,
+    buildExcludes: ['middleware-manifest.json']
+  }
+});
