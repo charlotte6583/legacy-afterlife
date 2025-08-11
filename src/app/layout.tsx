@@ -1,13 +1,17 @@
 import './globals.css';
 import './welcome.css';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import ClientLayout from './ClientLayout';
 import ServiceWorkerRegister from './components/ServiceWorkerRegister';
 
 export const metadata: Metadata = {
   title: "Charlotte's Legacy",
   description: "Preserving stories that matter.",
-  themeColor: "#ff9966"
+  // ⛔ Remove themeColor from here
+};
+
+export const viewport: Viewport = {
+  themeColor: "#ff9966", // ✅ Move it here
 };
 
 export default function RootLayout({

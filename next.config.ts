@@ -1,21 +1,19 @@
-// next.config.ts
-import withPWA from 'next-pwa';
-import type { NextConfig } from 'next';
+import withPWA from "next-pwa";
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  experimental: {
-    useLightningcss: false
-  },
   reactStrictMode: true,
-  // ✅ PWA config goes inside the wrapper, not here
+  experimental: {
+    useLightningcss: false,
+  },
 };
 
-export default withPWA({
-  ...nextConfig,
-  pwa: {
-    dest: 'public',
-    register: true,
-    skipWaiting: true,
-    buildExcludes: ['middleware-manifest.json']
-  }
+// Wrap only the PWA config, then merge
+const withPWAConfig = withPWA({
+  dest: "public",
+  register: true,
+  skipWaiting: true,
+  buildExcludes: ["middleware-manifest.json"],
 });
+
+export default withPWAConfig(nextConfig);
