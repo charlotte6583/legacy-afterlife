@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        crimson: ['"Crimson Text"', ...defaultTheme.fontFamily.serif],
+        cambria: ['Cambria', ...defaultTheme.fontFamily.serif],
       },
     },
   },

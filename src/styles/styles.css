@@ -9,9 +9,9 @@
   padding: 2rem;
   font-family: 'Helvetica Neue', sans-serif;
   color: #2d2d2d;
-
 }
 
+/* 🌌 Orb Image */
 .orb-image {
   width: 100vw;
   height: 100vw;
@@ -19,9 +19,9 @@
   max-height: 400px;
   border-radius: 50%;
   box-shadow: none; /* Remove halo */
-  object-fit: cover; /* Ensures the image fills the circle nicely */
+  object-fit: cover;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-top: -25rem; /* Moves the orb upward */
+  margin-top: -12rem; /* Moves the orb upward */
 }
 
 /* 💬 Welcome Message */
@@ -31,6 +31,18 @@
   font-weight: 500;
   margin-top: -5rem;
   max-width: 600px;
+}
+
+/* ✨ Fade-In Animation */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
 
 /* 📌 Bottom Navigation Fix */
@@ -50,4 +62,84 @@
 .nav-button:hover {
   background-color: #f0d98c; /* Slightly deeper gold on hover */
   transform: translateY(-2px); /* Gentle lift effect */
+}
+
+/* 🏷️ Custom Header Text Size */
+.header-title {
+  font-size: 2rem; /* ~text-3xl */
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  min-width: 0; /* ✅ Allows truncation in flex layouts */
+}
+
+/* 🍔 Hamburger Menu Button — now styled in white */
+.menu-button {
+  font-size: 2rem;
+  color: #ffffff;
+  padding: 0.5rem;
+  border: none;
+  background: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.menu-button:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* 👈 Soft white hover */
+}
+
+.menu-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4); /* 👈 White focus ring */
+}
+
+/* 🟢 Optional: Begin Button */
+.begin-button {
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #f5e9c5;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.begin-button:hover {
+  background-color: #f0d98c;
+  transform: translateY(-2px);
+}
+
+/* 🖋️ Smooth Typewriter Effect */
+.intro-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 200px;
+  padding: 2rem;
+  width: 100%;
+  margin-top: -5rem; /* ⬆️ Moves the text upward toward the orb */
+}
+
+.typewriter {
+  white-space: pre-wrap;
+  font-family: 'Courier New', monospace; /* You can swap this for something softer */
+  font-size: 1.25rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.fade-letter {
+  opacity: 0;
+  animation: fadeInLetter 0.4s ease-in forwards;
+}
+
+@keyframes fadeInLetter {
+  to {
+    opacity: 1;
+  }
 }

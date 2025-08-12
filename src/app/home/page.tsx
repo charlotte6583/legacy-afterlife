@@ -1,7 +1,8 @@
-'use client';
+"use client";
 
-import React from 'react';
+import React from "react";
 import Image from "next/image";
+import IntroText from "./components/IntroText"; // ✅ Correct relative path
 
 export default function HomePage() {
   return (
@@ -17,12 +18,8 @@ export default function HomePage() {
         />
       </div>
 
-      {/* 💬 Welcome Message */}
-      <div className="welcome-message">
-        <p>
-          Hello. I&apos;m here to help you leave something behind—something that matters.
-        </p>
-      </div>
-    </div> // ✅ Closed the outermost div
+      {/* 💬 Animated Welcome Message */}
+      <IntroText />
+    </div>
   );
 }

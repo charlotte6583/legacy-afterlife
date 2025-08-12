@@ -1,8 +1,9 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import Image from "next/image";
-import FeatureIcons from "./home/components/featureicons";
+import Link from 'next/link';
+import Image from 'next/image';
+import FeatureIcons from './home/components/featureicons';
+import './welcome.css'; // Make sure this is imported
 
 export default function WelcomePage() {
   return (
@@ -12,10 +13,10 @@ export default function WelcomePage() {
         className="absolute inset-0 w-full h-full z-0"
         style={{
           backgroundImage: "url('/tree.png')",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          imageRendering: "crisp-edges",
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          imageRendering: 'crisp-edges',
         }}
       />
 
@@ -32,7 +33,7 @@ export default function WelcomePage() {
               className="object-contain"
             />
           </div>
-          <h1 className="logo-title text-white text-5xl sm:text-5xl md:text-5xl font-semibold tracking-tight px-4 py-2 rounded-full bg-gradient-to-r from-black/95 to-gray-900/90 backdrop-blur-sm shadow-md whitespace-nowrap">
+          <h1 className="logo-title legacy-title px-4 py-2 whitespace-nowrap">
             Legacy Afterlife
           </h1>
         </div>
@@ -41,7 +42,7 @@ export default function WelcomePage() {
         <div className="h-[52vh] sm:h-[56vh] md:h-[60vh]" />
 
         {/* ✨ Tagline */}
-        <h2 className="tagline font-crimson text-white font-bold leading-tight drop-shadow-lg px-2 max-w-4xl mb-6">
+        <h2 className="tagline px-2 max-w-4xl mb-6">
           Every step of your life, beautifully preserved.
         </h2>
 
@@ -52,7 +53,7 @@ export default function WelcomePage() {
         <div className="h-[30px]" />
 
         {/* 🗣️ Emotional Quote */}
-        <p className="italic font-crimson text-white text-base sm:text-lg drop-shadow-sm px-2 max-w-xl">
+        <p className="quote px-2 max-w-xl">
           “I never knew my grandmother’s voice — until now.”
         </p>
 
@@ -61,24 +62,24 @@ export default function WelcomePage() {
           <Link href="/register">
             <button
               type="button"
-              className="font-crimson"
+              className="font-cambria"
               style={{
-                all: "unset",
-                backgroundColor: "#FF6F61",
-                color: "white",
-                fontSize: "16px",
-                padding: "12px 36px",
-                borderRadius: "9999px",
-                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-                cursor: "pointer",
-                transition: "transform 0.2s ease",
-                marginTop: "2rem",
+                all: 'unset',
+                backgroundColor: '#FF6F61',
+                color: 'white',
+                fontSize: '16px',
+                padding: '12px 36px',
+                borderRadius: '9999px',
+                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                cursor: 'pointer',
+                transition: 'transform 0.2s ease',
+                marginTop: '2rem',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "scale(1.03)";
+                e.currentTarget.style.transform = 'scale(1.03)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "scale(1)";
+                e.currentTarget.style.transform = 'scale(1)';
               }}
             >
               Get Started

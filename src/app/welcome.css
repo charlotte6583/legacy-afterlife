@@ -1,10 +1,22 @@
-/* src/app/intro.css */
+/* src/app/welcome.css */
 
 .logo-title {
+  font-family: Cambria, serif;
   font-size: clamp(2rem, 5vw + 1rem, 6rem);
-   font-weight: 600;
+  font-weight: bold;
+  color: white !important;
 }
 
 .tagline {
+  font-family: Cambria, serif;
   font-size: clamp(1rem, 6vw + 0.5rem, 4rem);
+  font-weight: normal;
+  color: white !important;
+}
+
+.quote {
+  font-family: Cambria, serif;
+  font-size: clamp(1rem, 3vw + 0.5rem, 2rem);
+  font-style: italic;
+  color: white !important;
 }
